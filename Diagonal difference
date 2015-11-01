@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner x=new Scanner(System.in);
+        int n;
+        n=x.nextInt();
+        int i,j;
+        int[][] anArray= new int[n][n];
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                anArray[i][j]=x.nextInt();
+            
+            }
+        }
+        int sum1=0;
+        int sum2=0;
+        for(i=0;i<n;i++){
+            sum1=sum1+anArray[i][i];
+        
+        }
+        int k=n;
+        for(i=0;i<n;i++){
+            j=k-1;
+            sum2=sum2+anArray[i][j];
+           k=k-1;
+        }
+        int total;
+        total= (sum1)-(sum2);
+        System.out.println(Math.abs(total));
+                           
+        
+    }
+}
