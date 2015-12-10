@@ -1,0 +1,54 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+ public static Integer count(Integer n,HashMap<Integer,ArrayList<Integer>> h){
+        ArrayList a = h.get(n);
+        if(a==null)
+            return 1;
+        Integer ct=0;
+        for(Integer i=0;i<a.size();i++){
+            ct += count((Integer)a.get(i),h);
+        }
+        return 1+ct;
+    }
+ 
+    public static void main(String[] args) {
+        
+        Scanner in = new Scanner(System.in);
+        int N,M;
+        N = in.nextInt();
+        M = in.nextInt();
+        int[] aux = new int[N+2];
+        HashMap<Integer,ArrayList<Integer>> hm = new HashMap<Integer,ArrayList<Integer>>();
+ 
+        int cnt=0;
+ 
+        
+        for(int i=0;i<M;i++){
+            int p,q;
+            p = in.nextInt();
+            q = in.nextInt();
+ 
+            ArrayList<Integer> al2 = hm.get(q);
+            if(al2==null){
+                al2 = new ArrayList<Integer>();
+                hm.put(q,al2);
+            }
+            al2.add(p);
+        }
+ 
+        // The solution
+        for(Integer k : hm.keySet()){
+            Integer x = count((Integer)k,hm);
+            if(x>1 && x%2==0 )
+                    cnt += 1;
+ 
+        }
+        cnt--; // since the root, which is an even tree shouldn't be considered in the answer.
+        System.out.println(cnt);
+    }
+}
