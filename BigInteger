@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner S=new Scanner(System.in);
+        int n= S.nextInt();
+        BigInteger prod1=BigInteger.valueOf(n);
+        
+        
+        for(int i=n;i>1;i--){
+            BigInteger prod2=BigInteger.valueOf(i-1);
+            prod1=prod2.multiply(prod1);
+        }
+       System.out.println(prod1);
+        
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
