@@ -1,0 +1,19 @@
+public class Main
+{
+	public static void main(String[] args) {
+		char[] A = new char[]{'s', 't', 'o', 'n', 'e'};
+		char[] B = new char[]{'l', 'o', 'n', 'g', 'e', 's', 't'};
+		System.out.println(lcs(A, B, 0, 0));
+	}
+	
+	public static int lcs(char[] A, char[] B, int i, int j){
+	    if ((i > A.length - 1) || (j > B.length - 1)){
+	        return 0;
+	    }
+	    if (A[i] == B[j]){
+	        return 1 + lcs(A, B, i+1, j+1);
+	    }else{
+	        return Math.max(lcs(A, B, i+1, j), lcs(A, B, i, j+1));
+	    }
+	}
+}
