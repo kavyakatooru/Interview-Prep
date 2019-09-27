@@ -1,3 +1,4 @@
+// Remove duplicate elements from array in-place by modifying the array.
 class Solution {
     public int removeDuplicates(int[] nums) {
         int len = 1;
@@ -17,6 +18,7 @@ class Solution {
                 len++;
             }
         }
-        return len;
+        return len; \\ nums[] from 0 to len-1 index is the required array.
     }
 }
+ 
