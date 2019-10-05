@@ -40,8 +40,8 @@ class Solution {
     
     public double median(int[] arr){
         if (arr.length%2 == 0){
-            return Double.valueOf(arr[arr.length/2 - 1] + arr[arr.length/2])/2;
+            return (double)(arr[arr.length/2 - 1] + arr[arr.length/2])/2;
         }
-        return Double.valueOf(arr[arr.length/2]);
+        return (double)(arr[arr.length/2]);
     }
 }
