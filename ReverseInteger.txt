@@ -1,0 +1,25 @@
+class Solution {
+    public int reverse(int x) {
+        int digits = findDigits(x);
+        int y = digits;
+        long reverseNum = 0;
+        for(int i=digits-1;i>=0;i--){
+            reverseNum = reverseNum + (long)((x%10)*(Math.pow(10,i)));
+            x = x/10;
+        }
+        System.out.println(reverseNum);
+        if ((reverseNum > 2147483647) || (reverseNum < -2147483648)){
+            return 0;
+        }
+        return (int)reverseNum;
+    }
+    
+    int findDigits(int y) {
+        int dig = 0;
+        while((y/10) != 0) {
+            y = y/10;
+            dig++;
+        }
+        return dig+1;  
+    }
+}
