@@ -1,2 +1,2 @@
 # Interview-Prep
-Programs from hackerrank.com in Java
+Problems solved from Hackerrank and Leetcode.
